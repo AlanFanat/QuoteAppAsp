@@ -1,0 +1,19 @@
+﻿@model Quote
+@{
+    ViewData["Title"] = "Детали цитаты";
+}
+<div class="container mt-4">
+    <h2>@Model.Title</h2>
+    <h5 class="text-muted">@Model.Author</h5>
+    <p>@Model.Text</p>
+    <span class="badge bg-secondary">@Model.Description</span>
+    <hr />
+    <p><b>Добавил:</b> @Model.User?.UserName</p>
+    <p><b>Дата:</b> @Model.CreatedAt.ToString("g")</p>
+    <div class="mb-2">
+        <span class="me-2">👍 @Model.Likes.Count</span>
+        <span class="me-2">👎 @Model.Dislikes.Count</span>
+        <span>⭐ @Model.Favorites.Count</span>
+    </div>
+    <a href="@Url.Action("Index", "Quote")" class="btn btn-secondary">Назад</a>
+</div>
