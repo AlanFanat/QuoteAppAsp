@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuoteApp.Db.Models;
 using QuoteApp.Models;
 using QuoteApp.ViewModels;
 using System;
@@ -10,8 +11,8 @@ namespace QuoteApp.Controllers
 {
     public class QuoteController : Controller
     {
-        private static List<Quote> _quotes = new List<Quote>
-        {
+        private static List<Quote> _quotes = new List<Quote>();
+        /*{
             new Quote
             {
                 Id = Guid.NewGuid(),
@@ -48,7 +49,7 @@ namespace QuoteApp.Controllers
                 User = new User { Id = Guid.NewGuid(), UserName = "socratist" },
                 Favorites = new List<Favorite>()
             }
-        };
+        };*/
         public IActionResult Index()
         {
             var quotesViewModels = _quotes.Select(model => QuoteViewModel.FromModel(model, Guid.NewGuid()));

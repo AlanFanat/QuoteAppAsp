@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QuoteApp.Models
+namespace QuoteApp.Db.Models
 {
     public class Favorite
     {

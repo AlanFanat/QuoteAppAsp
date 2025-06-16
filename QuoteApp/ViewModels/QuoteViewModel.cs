@@ -1,4 +1,5 @@
-﻿using QuoteApp.Models;
+﻿using QuoteApp.Db.Models;
+using QuoteApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
