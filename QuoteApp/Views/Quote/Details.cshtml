@@ -1,4 +1,4 @@
-﻿@model Quote
+﻿@model QuoteViewModel
 @{
     ViewData["Title"] = "Детали цитаты";
 }
@@ -8,10 +8,10 @@
     <p>@Model.Text</p>
     <span class="badge bg-secondary">@Model.Description</span>
     <hr />
-    <p><b>Добавил:</b> @Model.User?.UserName</p>
+    <p><b>Добавил:</b> @Model.UserName</p>
     <p><b>Дата:</b> @Model.CreatedAt.ToString("g")</p>
     <div class="mb-2">
-        <span>⭐ @Model.Favorites.Count</span>
+        <span>⭐ @Model.FavoritesCount</span>
     </div>
     <a href="@Url.Action("Index", "Quote")" class="btn btn-secondary">Назад</a>
 </div>

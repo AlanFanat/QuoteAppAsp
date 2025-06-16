@@ -46,7 +46,7 @@ namespace QuoteApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Quote}/{action=Index}/{id?}");
             });
         }
     }

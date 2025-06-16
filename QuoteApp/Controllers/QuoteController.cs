@@ -51,13 +51,15 @@ namespace QuoteApp.Controllers
         };
         public IActionResult Index()
         {
-            return View(_quotes);
+            var quotesViewModels = _quotes.Select(model => QuoteViewModel.FromModel(model, Guid.NewGuid()));
+            return View(quotesViewModels);
         }
         public IActionResult Details(Guid id)
         {
             var quote = _quotes.FirstOrDefault(q => q.Id == id);
             if (quote == null) return NotFound();
-            return View(quote);
+            var quoteViewModel = QuoteViewModel.FromModel(quote, Guid.NewGuid());
+            return View(quoteViewModel);
         }
 
         [HttpGet]

@@ -18,6 +18,7 @@ namespace QuoteApp.ViewModels
 
         public Guid UserId { get; set; }
         public string UserName { get; set; }
+        public int FavoritesCount { get; set; }
 
         public bool IsFavoritedByCurrentUser { get; set; }
         public static Quote ToModel(QuoteViewModel viewModel, Guid userId)
@@ -47,6 +48,7 @@ namespace QuoteApp.ViewModels
 
                 UserId = quote.UserId,
                 UserName = quote.User?.UserName ?? "Неизвестно",
+                FavoritesCount = quote.Favorites?.Count ?? 0,
 
 
                 IsFavoritedByCurrentUser = currentUserId.HasValue &&
