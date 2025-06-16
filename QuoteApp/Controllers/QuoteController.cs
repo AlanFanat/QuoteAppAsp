@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuoteApp.Models;
+using QuoteApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,6 @@ namespace QuoteApp.Controllers
                 CreatedAt = DateTime.Now.AddDays(-5),
                 UserId = Guid.NewGuid(),
                 User = new User { Id = Guid.NewGuid(), UserName = "philosopher123" },
-                Likes = new List<Like>(),
-                Dislikes = new List<Dislike>(),
                 Favorites = new List<Favorite>()
             },
             new Quote
@@ -35,17 +34,6 @@ namespace QuoteApp.Controllers
                 CreatedAt = DateTime.Now.AddDays(-10),
                 UserId = Guid.NewGuid(),
                 User = new User { Id = Guid.NewGuid(), UserName = "thinker88" },
-                Likes = new List<Like>
-                {
-                    new Like
-                    {
-                        Id = Guid.NewGuid(),
-                        UserId = Guid.NewGuid(),
-                        QuoteId = Guid.NewGuid(),
-                        User = new User { Id = Guid.NewGuid(), UserName = "reader01" }
-                    }
-                },
-                Dislikes = new List<Dislike>(),
                 Favorites = new List<Favorite>()
             },
             new Quote
@@ -58,17 +46,6 @@ namespace QuoteApp.Controllers
                 CreatedAt = DateTime.Now.AddDays(-2),
                 UserId = Guid.NewGuid(),
                 User = new User { Id = Guid.NewGuid(), UserName = "socratist" },
-                Likes = new List<Like>(),
-                Dislikes = new List<Dislike>
-                {
-                    new Dislike
-                    {
-                        Id = Guid.NewGuid(),
-                        UserId = Guid.NewGuid(),
-                        QuoteId = Guid.NewGuid(),
-                        User = new User { Id = Guid.NewGuid(), UserName = "critic42" }
-                    }
-                },
                 Favorites = new List<Favorite>()
             }
         };
@@ -81,6 +58,20 @@ namespace QuoteApp.Controllers
             var quote = _quotes.FirstOrDefault(q => q.Id == id);
             if (quote == null) return NotFound();
             return View(quote);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(QuoteViewModel quoteViewModel)
+        {
+            var quote = QuoteViewModel.ToModel(quoteViewModel, Guid.NewGuid());
+            _quotes.Add(quote);
+            return RedirectToAction("Index");
         }
     }
 }

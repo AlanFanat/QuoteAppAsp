@@ -17,9 +17,7 @@ namespace QuoteApp.Models
         public Guid UserId { get; set; }
         public User User { get; set; }
 
-        public List<Like> Likes { get; set; }
-        public List<Dislike> Dislikes { get; set; }
-        public List<Favorite> Favorites { get; set; }
+        public List<Favorite> Favorites { get; set; } = new List<Favorite>();
     }
 
 }

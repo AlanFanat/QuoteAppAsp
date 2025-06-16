@@ -13,13 +13,10 @@
                         <h5 class="card-title">@quote.Title</h5>
                         <h6 class="card-subtitle mb-2 text-muted">@quote.Author</h6>
                         <p class="card-text">@quote.Text</p>
-                        <span class="badge bg-secondary">@quote.Description</span>
                     </div>
                     <div class="card-footer d-flex justify-content-between align-items-center">
                         <a href="@Url.Action("Details", "Quote", new { id = quote.Id })" class="btn btn-sm btn-outline-primary">Подробнее</a>
                         <div>
-                            <button class="btn btn-sm btn-outline-success me-1" title="Лайк"><i class="bi bi-hand-thumbs-up"></i></button>
-                            <button class="btn btn-sm btn-outline-danger me-1" title="Дизлайк"><i class="bi bi-hand-thumbs-down"></i></button>
                             <button class="btn btn-sm btn-outline-warning" title="В избранное"><i class="bi bi-star"></i></button>
                         </div>
                     </div>

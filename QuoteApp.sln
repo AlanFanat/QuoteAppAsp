@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.35731.53
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteApp", "QuoteApp\QuoteApp.csproj", "{9D8AD9CA-E539-4F11-8A2F-55E9D90E768E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteApp.Db", "QuoteApp.Db\QuoteApp.Db.csproj", "{1B19160D-ADE2-4A97-900B-1645E98FD630}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9D8AD9CA-E539-4F11-8A2F-55E9D90E768E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D8AD9CA-E539-4F11-8A2F-55E9D90E768E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D8AD9CA-E539-4F11-8A2F-55E9D90E768E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B19160D-ADE2-4A97-900B-1645E98FD630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B19160D-ADE2-4A97-900B-1645E98FD630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B19160D-ADE2-4A97-900B-1645E98FD630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B19160D-ADE2-4A97-900B-1645E98FD630}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

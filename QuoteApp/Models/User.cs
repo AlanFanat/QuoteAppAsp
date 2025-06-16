@@ -7,8 +7,6 @@ namespace QuoteApp.Models
     public class User : IdentityUser<Guid>
     {
         public List<Quote> Quotes { get; set; }
-        public List<Like> Likes { get; set; }
-        public List<Dislike> Dislikes { get; set; }
         public List<Favorite> Favorites { get; set; }
     }
 }
