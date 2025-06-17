@@ -2,16 +2,33 @@
 @{
     ViewData["Title"] = "Детали цитаты";
 }
-<div class="container mt-4">
-    <h2>@Model.Title</h2>
-    <h5 class="text-muted">@Model.Author</h5>
-    <p>@Model.Text</p>
-    <span class="badge bg-secondary">@Model.Description</span>
-    <hr />
-    <p><b>Добавил:</b> @Model.UserName</p>
-    <p><b>Дата:</b> @Model.CreatedAt.ToString("g")</p>
-    <div class="mb-2">
-        <span>⭐ @Model.FavoritesCount</span>
+<div class="container mt-5">
+    <div class="card shadow rounded-4">
+        <div class="card-body">
+            <h3 class="card-title">@Model.Title</h3>
+            <h6 class="card-subtitle text-muted mb-3">Автор: @Model.Author</h6>
+
+            <blockquote class="blockquote">
+                <p class="mb-4">@Model.Text</p>
+            </blockquote>
+
+            @if (!string.IsNullOrWhiteSpace(Model.Description))
+            {
+                <p>
+                    <span class="badge bg-info text-dark">@Model.Description</span>
+                </p>
+            }
+
+            <div class="mt-4">
+                <p class="mb-1"><strong>Дата добалевния:</strong> @Model.CreatedAt.ToString("g")</p>
+                <p class="mb-1"><strong>⭐ В избранном:</strong> @Model.FavoritesCount</p>
+            </div>
+        </div>
+
+        <div class="card-footer d-flex justify-content-between">
+            <a href="@Url.Action("Index", "Quote")" class="btn btn-outline-secondary">
+                ← Назад к списку
+            </a>
+        </div>
     </div>
-    <a href="@Url.Action("Index", "Quote")" class="btn btn-secondary">Назад</a>
 </div>

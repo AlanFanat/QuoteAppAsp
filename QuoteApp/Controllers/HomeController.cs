@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace QuoteApp.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

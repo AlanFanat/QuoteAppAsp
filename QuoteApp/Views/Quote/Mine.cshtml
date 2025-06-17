@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<QuoteViewModel>
 @{
-    ViewData["Title"] = "Цитаты";
+    ViewData["Title"] = "Мои цитаты";
 }
 <div class="container mt-4">
-    <h2>Все цитаты</h2>
+    <h2>Мои цитаты</h2>
     <div class="row">
         @foreach (var quote in Model)
         {
@@ -30,4 +30,4 @@
         }
     </div>
     <a href="@Url.Action("Create", "Quote")" class="btn btn-primary mt-3">Добавить цитату</a>
-</div> 
+</div>
