@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using QuoteApp.Db.Models;
 using QuoteApp.Models;
 using QuoteApp.ViewModels;
